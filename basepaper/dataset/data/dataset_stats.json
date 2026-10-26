@@ -1,0 +1,58 @@
+{
+  "train": {
+    "num_samples": 30,
+    "shapes": [
+      [
+        256,
+        256
+      ]
+    ],
+    "total_buildings": 372,
+    "avg_buildings_per_image": 12.4,
+    "building_damage_counts": {
+      "1": 125,
+      "2": 96,
+      "3": 106,
+      "4": 45
+    },
+    "damage_pixel_counts": {
+      "0": 1708107,
+      "1": 86364,
+      "2": 67392,
+      "3": 73808,
+      "4": 30409
+    },
+    "loc_pixel_counts": {
+      "0": 1708107,
+      "255": 257973
+    }
+  },
+  "test": {
+    "num_samples": 10,
+    "shapes": [
+      [
+        256,
+        256
+      ]
+    ],
+    "total_buildings": 109,
+    "avg_buildings_per_image": 10.9,
+    "building_damage_counts": {
+      "1": 37,
+      "2": 25,
+      "3": 33,
+      "4": 14
+    },
+    "damage_pixel_counts": {
+      "0": 578860,
+      "1": 26275,
+      "2": 17018,
+      "3": 22614,
+      "4": 10593
+    },
+    "loc_pixel_counts": {
+      "0": 578860,
+      "255": 76500
+    }
+  }
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "disaster_test_000",
+    "pre_image": "test\\images\\disaster_test_000_pre_disaster.png",
+    "post_image": "test\\images\\disaster_test_000_post_disaster.png",
+    "loc_target": "test\\targets\\disaster_test_000_target_loc.png",
+    "dmg_target": "test\\targets\\disaster_test_000_target_dmg.png"
+  },
+  {
+    "id": "disaster_test_001",
+    "pre_image": "test\\images\\disaster_test_001_pre_disaster.png",
+    "post_image": "test\\images\\disaster_test_001_post_disaster.png",
+    "loc_target": "test\\targets\\disaster_test_001_target_loc.png",
+    "dmg_target": "test\\targets\\disaster_test_001_target_dmg.png"
+  },
+  {
+    "id": "disaster_test_002",
+    "pre_image": "test\\images\\disaster_test_002_pre_disaster.png",
+    "post_image": "test\\images\\disaster_test_002_post_disaster.png",
+    "loc_target": "test\\targets\\disaster_test_002_target_loc.png",
+    "dmg_target": "test\\targets\\disaster_test_002_target_dmg.png"
+  },
+  {
+    "id": "disaster_test_003",
+    "pre_image": "test\\images\\disaster_test_003_pre_disaster.png",
+    "post_image": "test\\images\\disaster_test_003_post_disaster.png",
+    "loc_target": "test\\targets\\disaster_test_003_target_loc.png",
+    "dmg_target": "test\\targets\\disaster_test_003_target_dmg.png"
+  },
+  {
+    "id": "disaster_test_004",
+    "pre_image": "test\\images\\disaster_test_004_pre_disaster.png",
+    "post_image": "test\\images\\disaster_test_004_post_disaster.png",
+    "loc_target": "test\\targets\\disaster_test_004_target_loc.png",
+    "dmg_target": "test\\targets\\disaster_test_004_target_dmg.png"
+  },
+  {
+    "id": "disaster_test_005",
+    "pre_image": "test\\images\\disaster_test_005_pre_disaster.png",
+    "post_image": "test\\images\\disaster_test_005_post_disaster.png",
+    "loc_target": "test\\targets\\disaster_test_005_target_loc.png",
+    "dmg_target": "test\\targets\\disaster_test_005_target_dmg.png"
+  },
+  {
+    "id": "disaster_test_006",
+    "pre_image": "test\\images\\disaster_test_006_pre_disaster.png",
+    "post_image": "test\\images\\disaster_test_006_post_disaster.png",
+    "loc_target": "test\\targets\\disaster_test_006_target_loc.png",
+    "dmg_target": "test\\targets\\disaster_test_006_target_dmg.png"
+  },
+  {
+    "id": "disaster_test_007",
+    "pre_image": "test\\images\\disaster_test_007_pre_disaster.png",
+    "post_image": "test\\images\\disaster_test_007_post_disaster.png",
+    "loc_target": "test\\targets\\disaster_test_007_target_loc.png",
+    "dmg_target": "test\\targets\\disaster_test_007_target_dmg.png"
+  },
+  {
+    "id": "disaster_test_008",
+    "pre_image": "test\\images\\disaster_test_008_pre_disaster.png",
+    "post_image": "test\\images\\disaster_test_008_post_disaster.png",
+    "loc_target": "test\\targets\\disaster_test_008_target_loc.png",
+    "dmg_target": "test\\targets\\disaster_test_008_target_dmg.png"
+  },
+  {
+    "id": "disaster_test_009",
+    "pre_image": "test\\images\\disaster_test_009_pre_disaster.png",
+    "post_image": "test\\images\\disaster_test_009_post_disaster.png",
+    "loc_target": "test\\targets\\disaster_test_009_target_loc.png",
+    "dmg_target": "test\\targets\\disaster_test_009_target_dmg.png"
+  }
+]

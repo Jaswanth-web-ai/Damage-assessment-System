@@ -1,0 +1,156 @@
+[
+  {
+    "id": 0,
+    "bbox": [
+      173,
+      84,
+      20,
+      37
+    ],
+    "damage_level": 1,
+    "damage_name": "No damage"
+  },
+  {
+    "id": 1,
+    "bbox": [
+      98,
+      202,
+      24,
+      19
+    ],
+    "damage_level": 2,
+    "damage_name": "Minor damage"
+  },
+  {
+    "id": 2,
+    "bbox": [
+      114,
+      151,
+      19,
+      21
+    ],
+    "damage_level": 3,
+    "damage_name": "Major damage"
+  },
+  {
+    "id": 3,
+    "bbox": [
+      147,
+      130,
+      23,
+      35
+    ],
+    "damage_level": 1,
+    "damage_name": "No damage"
+  },
+  {
+    "id": 4,
+    "bbox": [
+      84,
+      157,
+      30,
+      35
+    ],
+    "damage_level": 4,
+    "damage_name": "Destroyed"
+  },
+  {
+    "id": 5,
+    "bbox": [
+      201,
+      67,
+      33,
+      36
+    ],
+    "damage_level": 1,
+    "damage_name": "No damage"
+  },
+  {
+    "id": 6,
+    "bbox": [
+      203,
+      163,
+      19,
+      30
+    ],
+    "damage_level": 2,
+    "damage_name": "Minor damage"
+  },
+  {
+    "id": 7,
+    "bbox": [
+      11,
+      83,
+      28,
+      29
+    ],
+    "damage_level": 1,
+    "damage_name": "No damage"
+  },
+  {
+    "id": 8,
+    "bbox": [
+      67,
+      148,
+      24,
+      29
+    ],
+    "damage_level": 4,
+    "damage_name": "Destroyed"
+  },
+  {
+    "id": 9,
+    "bbox": [
+      69,
+      104,
+      23,
+      25
+    ],
+    "damage_level": 2,
+    "damage_name": "Minor damage"
+  },
+  {
+    "id": 10,
+    "bbox": [
+      167,
+      201,
+      31,
+      18
+    ],
+    "damage_level": 4,
+    "damage_name": "Destroyed"
+  },
+  {
+    "id": 11,
+    "bbox": [
+      191,
+      148,
+      25,
+      24
+    ],
+    "damage_level": 3,
+    "damage_name": "Major damage"
+  },
+  {
+    "id": 12,
+    "bbox": [
+      89,
+      41,
+      26,
+      25
+    ],
+    "damage_level": 1,
+    "damage_name": "No damage"
+  },
+  {
+    "id": 13,
+    "bbox": [
+      73,
+      216,
+      22,
+      23
+    ],
+    "damage_level": 3,
+    "damage_name": "Major damage"
+  }
+]

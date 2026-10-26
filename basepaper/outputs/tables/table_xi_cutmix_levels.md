@@ -1,0 +1,7 @@
+| Method | No damage | Minor | Major | Destroyed | F1_s |
+| --- | --- | --- | --- | --- | --- |
+| Ours (vanilla) | - | - | - | - | 0.789 |
+| CutMix (All Classes) | ✓ | ✓ | ✓ | ✓ | 0.79 |
+| CutMix (Minor+Major+Destroyed) | - | ✓ | ✓ | ✓ | 0.797 |
+| CutMix (Minor+Major only) | - | ✓ | ✓ | - | 0.802 |
+| CutMix (Minor only) | - | ✓ | - | - | 0.795 |

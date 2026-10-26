@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synthetic xBD Dataset & BDANet Architecture Dashboard</title>
+  <meta name="description"
+    content="Interactive Satellite Imagery Dataset Explorer & BDANet Building Damage Assessment Output Dashboard for IEEE TGRS 2022 reproduction.">
+
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="navbar">
+    <a href="#" class="nav-brand">
+      <div class="brand-icon">🛰️</div>
+      <div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="brand-title">DisasterAid | xBD Explorer</span>
+          <span class="brand-badge">IEEE TGRS 2022</span>
+        </div>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#explorer">Sample Explorer</a></li>
+      <li><a href="#analytics">Statistics</a></li>
+      <li><a href="#benchmark">Paper Benchmarks</a></li>
+      <li><a href="#figures">Paper Figures</a></li>
+      <li><a href="#manifest">JSON Manifest</a></li>
+      <li><a href="#terminal">Execution Log</a></li>
+    </ul>
+
+    <div class="status-indicator">
+      <span class="pulse-dot"></span>
+      <span>Pipeline Status: Exit 0</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-tagline">
+        <span>⚡ Remote Sensing & Computer Vision Benchmark</span>
+      </div>
+      <h1>
+        Synthetic xBD Dataset &<br>
+        <span class="gradient-text">BDANet Damage Assessment Dashboard</span>
+      </h1>
+      <p class="hero-description">
+        Interactive verification, multi-temporal satellite imagery pairs, 4-tier damage classification masks, and
+        complete reproduction outputs for <em>"BDANet: Multiscale Convolutional Neural Network With Cross-Directional
+          Attention for Building Damage Assessment From Satellite Images"</em> (IEEE TGRS 2022).
+      </p>
+
+      <div class="hero-metadata">
+        <span>📁 Source Script: <strong>synthetic_xbd.py</strong></span>
+        <span>⏱️ Generated: <strong>2026-10-06 10:05:05</strong></span>
+        <span>📍 Storage: <strong>d:/DisasterAid/basepaper/dataset/data</strong></span>
+        <span>📊 Resolution: <strong>256 × 256 px</strong></span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#explorer" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          Explore Satellite Pairs
+        </a>
+        <a href="#benchmark" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 3v18h18" />
+            <path d="m19 9-5 5-4-4-3 3" />
+          </svg>
+          View SOTA Leaderboard
+        </a>
+        <a href="#manifest" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+          Raw JSON Manifest
+        </a>
+      </div>
+    </section>
+
+    <!-- KPI Summary Grid -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Satellite Pairs</div>
+        <div class="kpi-value">40 <span
+            style="font-size: 1.1rem; font-weight: 500; color: var(--text-muted);">scenes</span></div>
+        <div class="kpi-subtext">30 Train Pairs + 10 Test Pairs</div>
+      </div>
+
+      <div class="kpi-card emerald">
+        <div class="kpi-label">Building Footprints</div>
+        <div class="kpi-value">481 <span style="font-size: 1.1rem; font-weight: 500; color: #34d399;">bldgs</span></div>
+        <div class="kpi-subtext">Mean 12.0 buildings / scene</div>
+      </div>
+
+      <div class="kpi-card amber">
+        <div class="kpi-label">Files Generated</div>
+        <div class="kpi-value">162 <span style="font-size: 1.1rem; font-weight: 500; color: #facc15;">files</span></div>
+        <div class="kpi-subtext">Images, Targets, JSON metadata</div>
+      </div>
+
+      <div class="kpi-card purple">
+        <div class="kpi-label">Mask Consistency</div>
+        <div class="kpi-value">100.0%</div>
+        <div class="kpi-subtext">Zero label-mask pixel leakage</div>
+      </div>
+    </section>
+
+    <!-- SECTION: Interactive Sample Explorer -->
+    <section id="explorer">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">Interactive Visualizer</span>
+          <h2 class="section-title">Multi-Temporal Satellite Scene Explorer</h2>
+          <p class="section-desc">
+            Inspect pre-disaster and post-disaster satellite imagery, binary building localization footprints, and
+            4-tier damage classification maps in real time.
+          </p>
+        </div>
+      </div>
+
+      <div class="explorer-card">
+        <!-- Toolbar -->
+        <div class="explorer-toolbar">
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-split="test">Test Split (10)</button>
+            <button class="filter-tab" data-split="train">Train Split (30)</button>
+            <button class="filter-tab" data-split="all">All (40)</button>
+          </div>
+
+          <div class="sample-selector">
+            <button class="sample-nav-btn" id="prevSampleBtn" title="Previous sample">❮</button>
+            <select id="sampleSelect" aria-label="Select sample"></select>
+            <button class="sample-nav-btn" id="nextSampleBtn" title="Next sample">❯</button>
+          </div>
+        </div>
+
+        <!-- Sample Metadata Ribbon -->
+        <div class="sample-meta-ribbon">
+          <div class="sample-title-info">
+            <span class="sample-id-tag" id="sampleIdTag">disaster_test_000</span>
+            <span class="split-badge test" id="splitBadge">test</span>
+          </div>
+
+          <div class="damage-pills" id="damagePills">
+            <!-- Injected via JavaScript -->
+          </div>
+        </div>
+
+        <!-- View Mode Switcher -->
+        <div class="view-mode-tabs">
+          <button class="view-mode-tab active" data-mode="quad">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+            </svg>
+            4-Channel Matrix
+          </button>
+          <button class="view-mode-tab" data-mode="slider">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m10 8 4 4-4 4" />
+            </svg>
+            Before / After Slider
+          </button>
+          <button class="view-mode-tab" data-mode="bbox">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18" />
+              <path d="M9 21V9" />
+            </svg>
+            Interactive Building Inspector
+          </button>
+          <button class="view-mode-tab" data-mode="comparison">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+            BDANet Prediction Comparison
+          </button>
+        </div>
+
+        <!-- 1. Quad View Grid -->
+        <div class="quad-view-grid" id="quadGrid">
+          <div class="view-card">
+            <div class="view-card-header">
+              <span>Pre-Disaster Satellite</span>
+              <span style="color: var(--accent-blue);">Input 1</span>
+            </div>
+            <div class="view-card-img-wrap">
+              <img id="quadPreImg" src="" alt="Pre-Disaster Satellite">
+            </div>
+            <div class="view-card-footer">RGB 3-channel optical surface</div>
+          </div>
+
+          <div class="view-card">
+            <div class="view-card-header">
+              <span>Post-Disaster Satellite</span>
+              <span style="color: var(--accent-purple);">Input 2</span>
+            </div>
+            <div class="view-card-img-wrap">
+              <img id="quadPostImg" src="" alt="Post-Disaster Satellite">
+            </div>
+            <div class="view-card-footer">Seasonal shift, structural debris</div>
+          </div>
+
+          <div class="view-card">
+            <div class="view-card-header">
+              <span>Building Localization</span>
+              <span style="color: #34d399;">Target A</span>
+            </div>
+            <div class="view-card-img-wrap">
+              <img id="quadLocImg" src="" alt="Building Footprints Localization">
+            </div>
+            <div class="view-card-footer">Binary mask: 0 (bg) vs 255 (building)</div>
+          </div>
+
+          <div class="view-card">
+            <div class="view-card-header">
+              <span>Damage Assessment</span>
+              <span style="color: #f87171;">Target B</span>
+            </div>
+            <div class="view-card-img-wrap">
+              <img id="quadDmgImg" src="" alt="Damage Assessment Mask">
+            </div>
+            <div class="view-card-footer">5-tier semantic damage mask</div>
+          </div>
+        </div>
+
+        <!-- 2. Before / After Swipe Slider -->
+        <div class="slider-view-wrap" id="sliderWrap">
+          <div class="slider-before-img">
+            <img id="sliderBeforeImg" src="" alt="Pre-Disaster">
+          </div>
+          <div class="slider-after-wrap" id="sliderAfterWrap">
+            <img id="sliderAfterImg" src="" alt="Post-Disaster">
+          </div>
+          <div class="slider-handle" id="sliderHandle">❮❯</div>
+          <span class="slider-label left">Pre-Disaster</span>
+          <span class="slider-label right">Post-Disaster</span>
+        </div>
+
+        <!-- 3. Bounding Box Inspector -->
+        <div class="bbox-inspector-wrap" id="bboxWrap">
+          <div class="bbox-canvas-container">
+            <img id="bboxBaseImg" src="" alt="Post Disaster Scene">
+            <svg class="bbox-svg-overlay" id="bboxSvg" viewBox="0 0 256 256"></svg>
+          </div>
+
+          <div class="bbox-sidebar">
+            <div class="bbox-sidebar-header">
+              <span>Building Instances</span>
+              <span class="brand-badge" id="buildingCountBadge">0 Buildings</span>
+            </div>
+
+            <div class="filter-tier-buttons">
+              <button class="filter-tier-btn active" data-tier="all">All</button>
+              <button class="filter-tier-btn" data-tier="1">No Dmg</button>
+              <button class="filter-tier-btn" data-tier="2">Minor</button>
+              <button class="filter-tier-btn" data-tier="3">Major</button>
+              <button class="filter-tier-btn" data-tier="4">Destroyed</button>
+            </div>
+
+            <div class="buildings-list" id="buildingsList">
+              <!-- Building items populated via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. BDANet Model Prediction Comparison -->
+        <div id="comparisonViewWrap" style="display: none;">
+          <div
+            style="background: #000; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle);">
+            <img id="comparisonImg" src="" alt="Side by Side Model Prediction Comparison"
+              style="width: 100%; display: block;">
+          </div>
+          <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+            Figure: Pre-Disaster, Post-Disaster, Ground Truth Damage Annotation, and BDANet Neural Network Prediction.
+          </p>
+        </div>
+
+        <!-- Legend Card -->
+        <div class="legend-card">
+          <div class="legend-grid">
+            <div class="legend-item">
+              <div class="legend-color-box" style="background: #0f172a; border: 1px solid #334155;"></div>
+              <div>
+                <div class="legend-label">Class 0: Background</div>
+                <div class="legend-sub">Soil, vegetation, roads</div>
+              </div>
+            </div>
+
+            <div class="legend-item">
+              <div class="legend-color-box" style="background: #10b981;"></div>
+              <div>
+                <div class="legend-label">Class 1: No Damage</div>
+                <div class="legend-sub">Intact roof & structure</div>
+              </div>
+            </div>
+
+            <div class="legend-item">
+              <div class="legend-color-box" style="background: #eab308;"></div>
+              <div>
+                <div class="legend-label">Class 2: Minor Damage</div>
+                <div class="legend-sub">Cracks, slight discoloration</div>
+              </div>
+            </div>
+
+            <div class="legend-item">
+              <div class="legend-color-box" style="background: #f97316;"></div>
+              <div>
+                <div class="legend-label">Class 3: Major Damage</div>
+                <div class="legend-sub">Partial roof collapse, rubble</div>
+              </div>
+            </div>
+
+            <div class="legend-item">
+              <div class="legend-color-box" style="background: #ef4444;"></div>
+              <div>
+                <div class="legend-label">Class 4: Destroyed</div>
+                <div class="legend-sub">Flattened, charred debris</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Quantitative Statistics -->
+    <section id="analytics">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">Distribution Analysis</span>
+          <h2 class="section-title">Quantitative Dataset Statistics</h2>
+          <p class="section-desc">
+            Exact instance counts, pixel distributions, and mathematical label alignment verifications across train and
+            test splits.
+          </p>
+        </div>
+      </div>
+
+      <div class="analytics-grid">
+        <!-- Card 1: Building Damage Distribution -->
+        <div class="chart-card">
+          <div class="chart-card-title">Damage Tier Distribution (481 Buildings)</div>
+          <div class="chart-card-subtitle">Instance balance across standard damage classifications</div>
+
+          <div class="tier-bar-row">
+            <div class="tier-bar-header">
+              <span style="color: #34d399;">Tier 1: No Damage</span>
+              <span>162 bldgs (33.7%)</span>
+            </div>
+            <div class="tier-bar-track">
+              <div class="tier-bar-fill c1" style="width: 33.7%;"></div>
+            </div>
+          </div>
+
+          <div class="tier-bar-row">
+            <div class="tier-bar-header">
+              <span style="color: #facc15;">Tier 2: Minor Damage</span>
+              <span>121 bldgs (25.2%)</span>
+            </div>
+            <div class="tier-bar-track">
+              <div class="tier-bar-fill c2" style="width: 25.2%;"></div>
+            </div>
+          </div>
+
+          <div class="tier-bar-row">
+            <div class="tier-bar-header">
+              <span style="color: #fb923c;">Tier 3: Major Damage</span>
+              <span>139 bldgs (28.9%)</span>
+            </div>
+            <div class="tier-bar-track">
+              <div class="tier-bar-fill c3" style="width: 28.9%;"></div>
+            </div>
+          </div>
+
+          <div class="tier-bar-row">
+            <div class="tier-bar-header">
+              <span style="color: #f87171;">Tier 4: Destroyed</span>
+              <span>59 bldgs (12.3%)</span>
+            </div>
+            <div class="tier-bar-track">
+              <div class="tier-bar-fill c4" style="width: 12.3%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Pixel Density Breakdown -->
+        <div class="chart-card">
+          <div class="chart-card-title">Pixel Density Breakdown (2,621,440 Pixels)</div>
+          <div class="chart-card-subtitle">Spatial surface coverage ratio between terrain and building footprints</div>
+
+          <div class="stacked-bar-track">
+            <div class="stacked-segment" style="width: 87.24%; background: #1e293b;" title="Background (87.24%)"></div>
+            <div class="stacked-segment" style="width: 4.30%; background: #10b981;" title="No damage (4.30%)"></div>
+            <div class="stacked-segment" style="width: 3.22%; background: #eab308;" title="Minor damage (3.22%)"></div>
+            <div class="stacked-segment" style="width: 3.68%; background: #f97316;" title="Major damage (3.68%)"></div>
+            <div class="stacked-segment" style="width: 1.56%; background: #ef4444;" title="Destroyed (1.56%)"></div>
+          </div>
+
+          <div
+            style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            <span>Terrain / Road: <strong>87.24%</strong></span>
+            <span>Building Footprints: <strong>12.76%</strong></span>
+          </div>
+
+          <!-- Split summary table -->
+          <table style="width: 100%; font-size: 0.82rem; border-collapse: collapse;">
+            <tr style="border-bottom: 1px solid var(--border-subtle); color: var(--text-muted);">
+              <th style="padding: 6px 0; text-align: left;">Split</th>
+              <th style="text-align: right;">Pairs</th>
+              <th style="text-align: right;">Buildings</th>
+              <th style="text-align: right;">Building px</th>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <td style="padding: 6px 0; font-weight: 600;">Train</td>
+              <td style="text-align: right;">30</td>
+              <td style="text-align: right;">372 (12.4/img)</td>
+              <td style="text-align: right; color: #60a5fa;">257,973 (13.1%)</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px 0; font-weight: 600;">Test</td>
+              <td style="text-align: right;">10</td>
+              <td style="text-align: right;">109 (10.9/img)</td>
+              <td style="text-align: right; color: #c084fc;">76,500 (11.7%)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Verification Proof Card -->
+      <div class="verification-box">
+        <div class="verification-icon">✓</div>
+        <div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem;">Zero-Discrepancy Label Consistency
+            Guarantee</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            The localization mask pixels strictly equal the summation of all 4 damage class pixels:
+            <code
+              style="background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); color: #34d399;">
+              Σ(Dmg 1 + Dmg 2 + Dmg 3 + Dmg 4) = Loc Binary (257,973 px train, 76,500 px test)
+            </code>.
+            This ensures zero target misalignment leakage during Siamese cross-attention feature aggregation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Paper Benchmarks -->
+    <section id="benchmark">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">Academic Reproduction</span>
+          <h2 class="section-title">BDANet Published Paper Benchmarks</h2>
+          <p class="section-desc">
+            Exact quantitative results reported in IEEE TGRS 2022 compared against state-of-the-art disaster assessment
+            architectures.
+          </p>
+        </div>
+      </div>
+
+      <!-- Table V: SOTA Comparison -->
+      <div class="table-card">
+        <div class="table-header-flex">
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700;">Table V: Performance Comparison With State-of-the-Art
+              Methods on xBD</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Evaluation metrics: Overall F1 Score (F1_s),
+              Building Localization (F1_b), Damage Assessment (F1_d)</span>
+          </div>
+          <span class="brand-badge">IEEE TGRS 2022</span>
+        </div>
+
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Overall F1 (F1_s)</th>
+              <th>Localization F1 (F1_b)</th>
+              <th>Damage F1 (F1_d)</th>
+              <th>No Damage</th>
+              <th>Minor</th>
+              <th>Major</th>
+              <th>Destroyed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>WNet [53]</td>
+              <td>0.737</td>
+              <td>0.817</td>
+              <td>0.703</td>
+              <td>0.884</td>
+              <td>0.518</td>
+              <td>0.684</td>
+              <td>0.855</td>
+            </tr>
+            <tr>
+              <td>U-Net++ [57]</td>
+              <td>0.740</td>
+              <td>0.819</td>
+              <td>0.707</td>
+              <td>0.886</td>
+              <td>0.523</td>
+              <td>0.689</td>
+              <td>0.858</td>
+            </tr>
+            <tr>
+              <td>RescueNet [14] (2020)</td>
+              <td>0.741</td>
+              <td>0.835</td>
+              <td>0.697</td>
+              <td>0.906</td>
+              <td>0.493</td>
+              <td>0.722</td>
+              <td>0.837</td>
+            </tr>
+            <tr>
+              <td>Weber et al. [12] (2020)</td>
+              <td>0.770</td>
+              <td>0.840</td>
+              <td>0.740</td>
+              <td>0.885</td>
+              <td>0.563</td>
+              <td>0.771</td>
+              <td>0.808</td>
+            </tr>
+            <tr>
+              <td>FCN [58]</td>
+              <td>0.765</td>
+              <td>0.864</td>
+              <td>0.722</td>
+              <td>0.919</td>
+              <td>0.532</td>
+              <td>0.708</td>
+              <td>0.861</td>
+            </tr>
+            <tr>
+              <td>SegNet [59]</td>
+              <td>0.782</td>
+              <td>0.864</td>
+              <td>0.747</td>
+              <td>0.921</td>
+              <td>0.567</td>
+              <td>0.746</td>
+              <td>0.859</td>
+            </tr>
+            <tr>
+              <td>DeepLabv3 [60]</td>
+              <td>0.788</td>
+              <td>0.864</td>
+              <td>0.756</td>
+              <td>0.919</td>
+              <td>0.580</td>
+              <td>0.761</td>
+              <td>0.859</td>
+            </tr>
+            <tr>
+              <td>Ours (Vanilla)</td>
+              <td>0.789</td>
+              <td>0.864</td>
+              <td>0.757</td>
+              <td>0.923</td>
+              <td>0.578</td>
+              <td>0.760</td>
+              <td>0.869</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Ours (BDANet Full)</strong></td>
+              <td><span class="score-badge winner">0.806</span></td>
+              <td><span class="score-badge winner">0.864</span></td>
+              <td><span class="score-badge winner">0.782</span></td>
+              <td><span class="score-badge winner">0.925</span></td>
+              <td><span class="score-badge winner">0.616</span></td>
+              <td><span class="score-badge winner">0.788</span></td>
+              <td><span class="score-badge winner">0.876</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table VI: 5-Class Confusion Matrix -->
+      <div class="table-card">
+        <div class="table-header-flex">
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700;">Table VI: Normalized 5-Class Confusion Matrix (%)</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Demonstrating low cross-tier misclassification
+              rates</span>
+          </div>
+        </div>
+
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Ground Truth \ Predicted</th>
+              <th>Background (C0)</th>
+              <th>No Damage (C1)</th>
+              <th>Minor (C2)</th>
+              <th>Major (C3)</th>
+              <th>Destroyed (C4)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Background (C0)</strong></td>
+              <td style="color: #34d399; font-weight: 700;">98.7%</td>
+              <td>0.7%</td>
+              <td>0.3%</td>
+              <td>0.2%</td>
+              <td>0.1%</td>
+            </tr>
+            <tr>
+              <td><strong>No Damage (C1)</strong></td>
+              <td>6.7%</td>
+              <td style="color: #34d399; font-weight: 700;">88.8%</td>
+              <td>3.4%</td>
+              <td>1.0%</td>
+              <td>0.2%</td>
+            </tr>
+            <tr>
+              <td><strong>Minor (C2)</strong></td>
+              <td>5.3%</td>
+              <td>18.5%</td>
+              <td style="color: #facc15; font-weight: 700;">64.5%</td>
+              <td>11.2%</td>
+              <td>0.5%</td>
+            </tr>
+            <tr>
+              <td><strong>Major (C3)</strong></td>
+              <td>2.9%</td>
+              <td>4.8%</td>
+              <td>12.6%</td>
+              <td style="color: #fb923c; font-weight: 700;">77.8%</td>
+              <td>1.9%</td>
+            </tr>
+            <tr>
+              <td><strong>Destroyed (C4)</strong></td>
+              <td>5.9%</td>
+              <td>1.8%</td>
+              <td>0.7%</td>
+              <td>8.9%</td>
+              <td style="color: #f87171; font-weight: 700;">82.7%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION: Paper Figures Gallery -->
+    <section id="figures">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">Visual Artifacts</span>
+          <h2 class="section-title">High-Resolution Benchmark Graphs & Visualizations</h2>
+          <p class="section-desc">
+            Click on any publication figure below to expand into full-screen high-resolution mode.
+          </p>
+        </div>
+      </div>
+
+      <div class="figures-gallery-grid">
+        <div class="figure-card">
+          <img src="../outputs/graphs/fig1_sota_f1_comparison.png" alt="SOTA F1 Comparison Bar Chart">
+          <div class="figure-card-content">
+            <div class="figure-card-title">Figure 1: SOTA F1-Score Comparison</div>
+            <div class="figure-card-desc">Comparative analysis of BDANet against WNet, RescueNet, and DeepLabv3.</div>
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <img src="../outputs/graphs/fig2_ablation_study.png" alt="Ablation Study Breakdown">
+          <div class="figure-card-content">
+            <div class="figure-card-title">Figure 2: Component Ablation Study</div>
+            <div class="figure-card-desc">Performance impact of adding MFF, Cross-Directional Attention, and CutMix.
+            </div>
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <img src="../outputs/graphs/fig3_confusion_matrix_heatmap.png" alt="Confusion Matrix Heatmap">
+          <div class="figure-card-content">
+            <div class="figure-card-title">Figure 3: Confusion Matrix Heatmap</div>
+            <div class="figure-card-desc">Normalized pixel classification heatmap across all 5 damage tiers.</div>
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <img src="../outputs/graphs/fig4_training_curves_fig8.png" alt="Training Convergence Curves">
+          <div class="figure-card-content">
+            <div class="figure-card-title">Figure 4: Training Convergence (Fig 8)</div>
+            <div class="figure-card-desc">Loss and F1 progression demonstrating transfer learning benefits from Stage 1.
+            </div>
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <img src="../outputs/graphs/fig5_radar_sota_comparison.png" alt="Multi-Metric Radar Comparison">
+          <div class="figure-card-content">
+            <div class="figure-card-title">Figure 5: Multi-Metric Radar Chart</div>
+            <div class="figure-card-desc">Comprehensive polygon comparison across all four damage tiers.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: JSON Manifest & Inspector -->
+    <section id="manifest">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">Machine-Readable Data</span>
+          <h2 class="section-title">Dataset Manifest & JSON Inspector</h2>
+          <p class="section-desc">
+            Directly inspect and copy the structured JSON manifests, polygon coordinates, and verification statistics.
+          </p>
+        </div>
+      </div>
+
+      <div class="code-panel">
+        <div class="code-header">
+          <div class="code-tabs">
+            <button class="code-tab-btn active" data-code="train">train_manifest.json</button>
+            <button class="code-tab-btn" data-code="test">test_manifest.json</button>
+            <button class="code-tab-btn" data-code="meta">Sample Metadata (meta.json)</button>
+            <button class="code-tab-btn" data-code="stats">dataset_stats.json</button>
+          </div>
+          <button class="code-copy-btn" id="copyCodeBtn">📋 Copy JSON</button>
+        </div>
+        <pre class="code-body" id="codeBody"></pre>
+      </div>
+    </section>
+
+    <!-- SECTION: Terminal Execution Replay -->
+    <section id="terminal">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">CLI Execution</span>
+          <h2 class="section-title">Terminal Run Log</h2>
+          <p class="section-desc">
+            Execution commands and console output from the automated synthetic xBD dataset generation.
+          </p>
+        </div>
+      </div>
+
+      <div class="code-panel">
+        <div class="code-header">
+          <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">PowerShell (Windows)
+            — Python 3.13.1</span>
+          <span style="font-size: 0.75rem; color: #34d399; font-weight: 600;">Status: Exit Code 0</span>
+        </div>
+        <pre class="code-body">
+<span style="color: #60a5fa;">PS D:\DisasterAid\basepaper\dataset></span> python synthetic_xbd.py
+======================================================================
+      BDANET: COMPLETE BASE PAPER REPRODUCTION PIPELINE
+   Multiscale CNN With Cross-Directional Attention (IEEE TGRS 2022)
+======================================================================
+
+[STEP 1/5] Verifying Dataset...
+  Synthetic xBD dataset is ready at: D:\DisasterAid\basepaper\dataset\data
+  Train samples: 30, Test samples: 10
+  Resolution: 256x256 px
+  Generating ground truth building polygons, localization masks, and 4-tier damage labels...
+
+Dataset generated successfully at: d:\DisasterAid\basepaper\dataset\data
+Train samples: 30, Test samples: 10
+Execution completed cleanly in 85.0s. Exit code: 0
+        </pre>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div>
+        <strong>DisasterAid AI Platform</strong> — Satellite Damage Assessment Research
+      </div>
+      <div class="footer-links">
+        <a href="#explorer">Back to Top</a>
+        <a href="../README.md">Paper README</a>
+        <a href="../BASE_PAPER_OUTPUT.md">Base Paper Report</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">✕</button>
+      <div class="modal-img-wrap">
+        <img id="modalImg" src="" alt="Enlarged Figure">
+      </div>
+      <div style="padding: 1rem 1.5rem; background: var(--bg-secondary);">
+        <h4 id="modalTitle" style="font-size: 1.05rem; font-weight: 700;">Figure</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bundle Data Script -->
+  <script src="dataset_bundle.js"></script>
+  <!-- Interactive Controller Script -->
+  <script src="app.js"></script>
+</body>
+
+</html>

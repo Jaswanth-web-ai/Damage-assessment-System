@@ -1,0 +1,212 @@
+[
+  {
+    "id": "disaster_train_000",
+    "pre_image": "train\\images\\disaster_train_000_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_000_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_000_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_000_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_001",
+    "pre_image": "train\\images\\disaster_train_001_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_001_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_001_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_001_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_002",
+    "pre_image": "train\\images\\disaster_train_002_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_002_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_002_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_002_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_003",
+    "pre_image": "train\\images\\disaster_train_003_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_003_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_003_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_003_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_004",
+    "pre_image": "train\\images\\disaster_train_004_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_004_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_004_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_004_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_005",
+    "pre_image": "train\\images\\disaster_train_005_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_005_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_005_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_005_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_006",
+    "pre_image": "train\\images\\disaster_train_006_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_006_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_006_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_006_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_007",
+    "pre_image": "train\\images\\disaster_train_007_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_007_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_007_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_007_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_008",
+    "pre_image": "train\\images\\disaster_train_008_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_008_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_008_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_008_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_009",
+    "pre_image": "train\\images\\disaster_train_009_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_009_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_009_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_009_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_010",
+    "pre_image": "train\\images\\disaster_train_010_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_010_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_010_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_010_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_011",
+    "pre_image": "train\\images\\disaster_train_011_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_011_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_011_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_011_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_012",
+    "pre_image": "train\\images\\disaster_train_012_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_012_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_012_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_012_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_013",
+    "pre_image": "train\\images\\disaster_train_013_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_013_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_013_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_013_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_014",
+    "pre_image": "train\\images\\disaster_train_014_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_014_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_014_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_014_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_015",
+    "pre_image": "train\\images\\disaster_train_015_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_015_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_015_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_015_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_016",
+    "pre_image": "train\\images\\disaster_train_016_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_016_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_016_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_016_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_017",
+    "pre_image": "train\\images\\disaster_train_017_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_017_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_017_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_017_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_018",
+    "pre_image": "train\\images\\disaster_train_018_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_018_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_018_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_018_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_019",
+    "pre_image": "train\\images\\disaster_train_019_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_019_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_019_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_019_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_020",
+    "pre_image": "train\\images\\disaster_train_020_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_020_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_020_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_020_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_021",
+    "pre_image": "train\\images\\disaster_train_021_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_021_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_021_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_021_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_022",
+    "pre_image": "train\\images\\disaster_train_022_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_022_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_022_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_022_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_023",
+    "pre_image": "train\\images\\disaster_train_023_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_023_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_023_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_023_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_024",
+    "pre_image": "train\\images\\disaster_train_024_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_024_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_024_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_024_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_025",
+    "pre_image": "train\\images\\disaster_train_025_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_025_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_025_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_025_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_026",
+    "pre_image": "train\\images\\disaster_train_026_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_026_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_026_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_026_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_027",
+    "pre_image": "train\\images\\disaster_train_027_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_027_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_027_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_027_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_028",
+    "pre_image": "train\\images\\disaster_train_028_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_028_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_028_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_028_target_dmg.png"
+  },
+  {
+    "id": "disaster_train_029",
+    "pre_image": "train\\images\\disaster_train_029_pre_disaster.png",
+    "post_image": "train\\images\\disaster_train_029_post_disaster.png",
+    "loc_target": "train\\targets\\disaster_train_029_target_loc.png",
+    "dmg_target": "train\\targets\\disaster_train_029_target_dmg.png"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "id": 0,
+    "bbox": [
+      158,
+      197,
+      36,
+      30
+    ],
+    "damage_level": 4,
+    "damage_name": "Destroyed"
+  },
+  {
+    "id": 1,
+    "bbox": [
+      89,
+      214,
+      30,
+      27
+    ],
+    "damage_level": 3,
+    "damage_name": "Major damage"
+  },
+  {
+    "id": 2,
+    "bbox": [
+      107,
+      178,
+      20,
+      22
+    ],
+    "damage_level": 4,
+    "damage_name": "Destroyed"
+  },
+  {
+    "id": 3,
+    "bbox": [
+      129,
+      179,
+      26,
+      19
+    ],
+    "damage_level": 4,
+    "damage_name": "Destroyed"
+  },
+  {
+    "id": 4,
+    "bbox": [
+      125,
+      125,
+      24,
+      18
+    ],
+    "damage_level": 1,
+    "damage_name": "No damage"
+  },
+  {
+    "id": 5,
+    "bbox": [
+      23,
+      178,
+      22,
+      30
+    ],
+    "damage_level": 1,
+    "damage_name": "No damage"
+  },
+  {
+    "id": 6,
+    "bbox": [
+      170,
+      24,
+      29,
+      18
+    ],
+    "damage_level": 4,
+    "damage_name": "Destroyed"
+  },
+  {
+    "id": 7,
+    "bbox": [
+      205,
+      160,
+      27,
+      35
+    ],
+    "damage_level": 1,
+    "damage_name": "No damage"
+  }
+]
